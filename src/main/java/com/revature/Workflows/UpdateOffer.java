@@ -35,7 +35,7 @@ public class UpdateOffer {
             pstmt = conn.prepareStatement(SQL);
             pstmt.setInt(1, this.primary);
             pstmt.executeUpdate();
-            System.out.println("Offer declined");
+            System.out.println("Offer Accepted");
         } catch (SQLException e) {
             e.getMessage();
         }

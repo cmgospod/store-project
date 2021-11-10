@@ -13,13 +13,13 @@ public class App {
     private static final Logger logger = Logger.getLogger("mts");
 
     public static void main(String[] args) {
-        String employeePassword = "j2";
+        String employeePassword = "secure";
         Console console = System.console();
         Scanner scanner = new Scanner(console.reader());
 
         boolean GoOn = true;
         while (GoOn) {
-            System.out.println("Welcome! Are you an employee or an customer?");
+            System.out.println("Welcome! Are you an employee or a customer?");
             String TypeInput = scanner.nextLine().toLowerCase();
             if (TypeInput.equals("employee")) {
                 System.out.println("Hello! Please enter the employee password.");
