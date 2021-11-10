@@ -69,7 +69,7 @@ public class ViewItems {
         }
         else {
             try{
-                int a = scanner.nextInt();
+                int a = Integer.parseInt(input);
                 Integer b = keys.get(a + 1);
                 System.out.println("And how much would you like to offer?");
                 String offerAmount = scanner.nextLine();
