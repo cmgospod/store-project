@@ -70,15 +70,17 @@ public class ViewItems {
         else {
             try{
                 int a = Integer.parseInt(input);
-                Integer b = keys.get(a + 1);
+                Integer b = keys.get(a - 1);
                 System.out.println("And how much would you like to offer?");
                 String offerAmount = scanner.nextLine();
                 int numericOffer = Integer.parseInt(offerAmount);
                 Offer offer = new Offer(idCustomer, b, numericOffer, 0);
+                offer.sendOffer();
                 System.out.println("Your offer has been sent!");
 
             }
             catch (Exception e) {
+                System.out.println(e.getMessage());
                 System.out.println("Invalid");
             }
     }}}

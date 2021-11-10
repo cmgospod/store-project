@@ -19,10 +19,7 @@ public class ReviewOffers {
     public void reviewOffersFlow() {
         ArrayList<Integer> keys = new ArrayList<Integer>();
         PreparedStatement pstmt = null;
-        String SQL = "SELECT * FROM offers\n" +
-                "LEFT JOIN items\n" +
-                "ON offers.idItems=items.idItems\n" +
-                "WHERE status=0;";
+        String SQL = "SELECT * FROM offers\nLEFT JOIN items\nON offers.idItems=items.idItems\nWHERE status=0;";
         ResultSet rs = null;
         Connection conn = null;
         try{
@@ -37,9 +34,10 @@ public class ReviewOffers {
             }
             System.out.println("Type the number of the offer you would like to decide on");
             int a = scanner.nextInt();
-            Integer primary = keys.get(a + 1);
+            Integer primary = keys.get(a - 1);
             System.out.println("y to accept or n to decline");
-            String decision = scanner.nextLine();
+            Scanner viewer = new Scanner(console.reader());
+            String decision = viewer.nextLine();
             if (decision.equals("y")){
                 UpdateOffer updateOffer = new UpdateOffer(primary);
                 updateOffer.acceptOffer();
